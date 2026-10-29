@@ -1,0 +1,4 @@
+# Installed third-party skills: local only, never committed
+.claude/skills/
+.github/skills/
+.agents/skills/
