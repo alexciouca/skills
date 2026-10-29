@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "alexciouca-skills",
+  "description": "alexciouca's own agent skills.",
+  "owner": {
+    "name": "alexciouca"
+  },
+  "plugins": [
+    {
+      "name": "sloth",
+      "description": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask.",
+      "version": "1.0.0",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

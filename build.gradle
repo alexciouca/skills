@@ -1,0 +1,87 @@
+import groovy.json.JsonSlurper
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'io.github.alexciouca'
+// The plugin manifest is the single source of truth for the version.
+version = new JsonSlurper().parse(file('plugin.json')).version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.yaml:snakeyaml:2.3'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+}
+
+// There is no production code, only skills, so no jar is built.
+jar {
+    enabled = false
+}
+
+test {
+    useJUnitPlatform()
+    // Tests read the skill and manifest files from the repository root.
+    systemProperty 'repo.root', rootDir.absolutePath
+    // Re-run tests when any skill or manifest file changes.
+    inputs.files(fileTree('skills'), 'plugin.json', fileTree('.claude-plugin'),
+            fileTree('.github/plugin'), fileTree('.codex-plugin'), fileTree('.agents/plugins'),
+            'CLAUDE.md', 'AGENTS.md')
+            .withPropertyName('repoFiles')
+            .withPathSensitivity(PathSensitivity.RELATIVE)
+}
+
+// The distributable bundle: skills plus every plugin and marketplace manifest,
+// laid out exactly as in the repository so any agent can install from it.
+tasks.register('skillsZip', Zip) {
+    group = 'build'
+    description = 'Packages the skills and plugin manifests into one zip.'
+    archiveBaseName = 'sloth-skills'
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    from('.') {
+        include 'skills/**', 'plugin.json', '.claude-plugin/**', '.github/plugin/**',
+                '.codex-plugin/**', '.agents/plugins/**', 'assets/**', 'LICENSE', 'README.md'
+    }
+}
+
+tasks.named('assemble') {
+    dependsOn 'skillsZip'
+}
+
+publishing {
+    publications {
+        skills(MavenPublication) {
+            artifactId = 'sloth-skills'
+            artifact tasks.named('skillsZip')
+            pom {
+                name = 'sloth-skills'
+                description = 'Sloth agent skills for Claude, GitHub Copilot and Codex.'
+                url = 'https://github.com/alexciouca/skills'
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Everything CI needs to pass: compile, tests, the bundle and its POM.
+tasks.register('ciVerify') {
+    group = 'verification'
+    description = 'Runs all checks and builds the publishable bundle.'
+    dependsOn 'build', 'generatePomFileForSkillsPublication'
+}
