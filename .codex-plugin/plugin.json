@@ -1,0 +1,40 @@
+{
+  "name": "sloth",
+  "version": "1.0.0",
+  "description": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask.",
+  "author": {
+    "name": "alexciouca",
+    "url": "https://github.com/alexciouca"
+  },
+  "homepage": "https://github.com/alexciouca/skills",
+  "repository": "https://github.com/alexciouca/skills",
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "code-review",
+    "planning",
+    "testing",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sloth",
+    "shortDescription": "Lazy-but-right senior dev workflow: align, build, test, review, report",
+    "longDescription": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask.",
+    "developerName": "alexciouca",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use sloth for this task.",
+      "Review my uncommitted changes with sloth-review.",
+      "Plan this feature with sloth-plan."
+    ],
+    "websiteURL": "https://github.com/alexciouca/skills",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

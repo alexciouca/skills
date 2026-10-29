@@ -2,3 +2,10 @@
 .claude/skills/
 .github/skills/
 .agents/skills/
+
+# Built skill zips for the Claude app
+dist/
+
+# Gradle
+.gradle/
+build/
