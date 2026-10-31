@@ -1,7 +1,7 @@
 {
   "name": "sloth",
-  "version": "1.0.0",
-  "description": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask.",
+  "version": "1.1.0",
+  "description": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Plus offline UI design review and improvement. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask, sloth-design.",
   "author": {
     "name": "alexciouca",
     "url": "https://github.com/alexciouca"
@@ -14,13 +14,14 @@
     "code-review",
     "planning",
     "testing",
-    "productivity"
+    "productivity",
+    "design"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Sloth",
     "shortDescription": "Lazy-but-right senior dev workflow: align, build, test, review, report",
-    "longDescription": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask.",
+    "longDescription": "Senior-level dev workflow in any language, lazy about the solution, never about getting it right: align on the task, build the simplest change in the project's style, test, review harshly, update docs and changelog, report briefly. Plus offline UI design review and improvement. Commands: sloth, sloth-mini, sloth-review, sloth-plan, sloth-ask, sloth-design.",
     "developerName": "alexciouca",
     "category": "Developer Tools",
     "capabilities": [
@@ -31,7 +32,8 @@
     "defaultPrompt": [
       "Use sloth for this task.",
       "Review my uncommitted changes with sloth-review.",
-      "Plan this feature with sloth-plan."
+      "Plan this feature with sloth-plan.",
+      "Critique this page with sloth-design."
     ],
     "websiteURL": "https://github.com/alexciouca/skills",
     "composerIcon": "./assets/icon.png",

@@ -17,6 +17,22 @@ A senior-level dev workflow for any language.
 | `sloth-review` | Harsh review of a change. Numbered findings with `path:line` and the smallest fix. Changes no code. |
 | `sloth-plan` | Interview one question at a time, compare approaches, write a step-by-step plan. Writes no code. |
 | `sloth-ask` | Short answers about the code. Read-only. |
+| `sloth-design` | Design work on a frontend, fully offline: `/sloth-design <command> <target>`. Checks the result in a real browser (Playwright) when it can. |
+
+`sloth-design` commands:
+
+| Command | What it does |
+|---|---|
+| `critique` | Scored UX review with ranked fixes. Changes nothing. |
+| `audit` | Accessibility, responsive, theming and performance findings, P0–P3. Changes nothing. |
+| `polish` | Final detail pass: alignment, spacing, states, consistency. |
+| `harden` | Empty, loading and error states, long text, overflow, edge cases. |
+| `typeset` | Fonts, type scale, hierarchy, readability. |
+| `layout` | Spacing scale, grid, grouping, rhythm. |
+| `bolder` / `quieter` | Give a timid design a point of view, or calm a loud one. |
+| `new` | Build a new screen from one of 24 directions in a local catalog. |
+
+It calls no services and sends no telemetry; everything it uses is in `skills/sloth-design/`. Ideas inspired by [Impeccable](https://github.com/pbakaus/impeccable), written from scratch.
 
 ## Install
 
@@ -109,7 +125,7 @@ A Gradle project checks the skills and manifests and packages them. Needs JDK 17
 | `./gradlew ciVerify` | Everything CI needs: `build` plus the Maven POM |
 | `./gradlew publishToMavenLocal` | Publishes `io.github.alexciouca:sloth-skills:<version>` (the zip) to `~/.m2` |
 
-The tests (`src/test/java/`) check that each skill's frontmatter loads in Claude Code, Copilot and Codex (name matches folder, description length, known keys), that command-only skills have the Codex policy, that every plugin and marketplace manifest names the same plugin and version, and that `AGENTS.md` matches `CLAUDE.md`. The version comes from `plugin.json`.
+The tests (`src/test/java/`) check that each skill's frontmatter loads in Claude Code, Copilot and Codex (name matches folder, description length, known keys), that command-only skills have the Codex policy, that every `reference/` playbook is linked from its `SKILL.md`, that every plugin and marketplace manifest names the same plugin and version, and that `AGENTS.md` matches `CLAUDE.md`. The version comes from `plugin.json`.
 
 GitHub Actions (`.github/workflows/ci.yml`) runs `./gradlew ciVerify` on every pull request and on pushes to `main`.
 
