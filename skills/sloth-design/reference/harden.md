@@ -31,6 +31,10 @@ code, unless the project keeps fixtures.
 - **Forms:** validation messages next to the field, on blur or submit, not on
   every keystroke; required fields marked; double submit blocked; autofill
   works.
+- **Timing:** double clicks, two tabs editing the same thing, data that
+  changed since the page loaded, a drag or swipe released halfway.
+- **Locale:** dates, times, numbers and currencies formatted for the user's
+  locale (`Intl`), not hand-built strings.
 - **Permissions and roles:** disabled actions explain why; read-only views
   don't show dead buttons.
 - **Right-to-left and other scripts:** only if the project supports them; use

@@ -7,6 +7,19 @@ finished. Small, many, careful changes. No new features, no new look.
 **May change:** spacing, alignment, sizes within the scale, colors within the
 palette, states, transitions, small copy fixes (typos, casing, punctuation).
 
+## Order
+
+Polish the whole target to one level rather than perfecting one corner. Fix
+in this order, so a beautiful button never ships on a broken flow:
+
+1. broken tasks, misleading states, anything inaccessible;
+2. missing states (loading, empty, error, success, disabled);
+3. hierarchy, responsive problems, drift from the design system;
+4. visual and motion inconsistencies;
+5. cleanup of styles and assets.
+
+Items in group 1 that need real work → report them and suggest `harden`.
+
 ## Checklist
 
 Render first and work from the screenshots, then the code.

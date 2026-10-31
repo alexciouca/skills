@@ -11,14 +11,27 @@ asks for a redesign. Choose a direction first, then build it fully.
    - the content available (real copy, images, data);
    - constraints: framework, component library, pinned brand elements,
      `DESIGN.md`, deadlines on scope.
-   Missing audience or goal → ask one question. Missing content → build with
-   clearly marked placeholders, never invented facts.
+   Ask what you can't learn from the code, two or three questions in one go
+   at most, shaped by the mode:
+   - Sell: who must act, what they must believe, what real proof exists.
+   - Work: the task, how often it's done, the states that matter.
+   - Read: the reader's question, the source material, how they navigate.
+   - Show: what leads, how people browse, which moment matters.
+   Always worth asking: what must stay untouched, and what would make the
+   result feel wrong. Missing content → build with clearly marked
+   placeholders, never invented facts.
 2. **Mode.** Pick and state it (SKILL.md step 2).
-3. **Direction.**
+3. **Direction.** Invent only as much as the job needs:
    - The user or `DESIGN.md` already sets the look → use it, skip the
      catalog.
-   - Existing product getting a new screen → the existing system is the
-     direction; the catalog only for a detail if it helps.
+   - Existing product getting a new screen, section or state → it inherits
+     the existing system, even without a `DESIGN.md`. A new component is
+     never a reason for a new identity.
+   - Some brand pieces exist (logo, a color) → keep them and grow the system
+     around them with the user.
+   - Redesign → keep the product's content, function and pinned brand
+     elements; treat the old look as evidence of what the product is, not as
+     something to polish.
    - Otherwise read [directions.md](directions.md) and choose three that fit
      the mode and the brief. Make one of them the safe fit and at least one a
      less obvious fit. For each, give the name, why it fits this brief, and

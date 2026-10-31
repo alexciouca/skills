@@ -32,7 +32,7 @@ A senior-level dev workflow for any language.
 | `bolder` / `quieter` | Give a timid design a point of view, or calm a loud one. |
 | `new` | Build a new screen from one of 24 directions in a local catalog. |
 
-It calls no services and sends no telemetry; everything it uses is in `skills/sloth-design/`.
+It calls no services and sends no telemetry; everything it uses is in `skills/sloth-design/`. Ideas inspired by [Impeccable](https://github.com/pbakaus/impeccable), written from scratch.
 
 ## Install
 

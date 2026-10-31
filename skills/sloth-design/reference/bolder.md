@@ -12,7 +12,11 @@ within what the mode allows.
 
 1. **Find the idea.** What is the one thing this screen should make people
    feel or remember? Write it in one line. No idea, no bolder: ask.
-2. **Pick levers, strongest first.** Usually one or two are enough:
+2. **Look at the neighbors.** A flat section often skips the moves the rest
+   of the page already makes: the display type at full size, the signature
+   detail, the density. Bring it up to that level in the page's own
+   vocabulary before inventing new moves.
+3. **Pick levers, strongest first.** Usually one or two are enough:
    - **Scale contrast:** make the most important thing much bigger, and the
      rest smaller. Timid designs keep everything medium.
    - **Weight and type contrast:** a heavy or characterful headline against
@@ -24,9 +28,12 @@ within what the mode allows.
    - **Real imagery:** a large, specific photo or illustration instead of
      generic icons.
    - **Motion:** last, and only for one moment that supports the idea.
-3. **Remove what competes.** Bolder often means fewer elements, so the bold
+4. **Remove what competes.** Bolder often means fewer elements, so the bold
    one has room.
-4. **Check the floor.** Contrast, focus, targets, reading comfort still pass.
+5. **Gray-box test.** Replace the copy with gray bars in your head (or in a
+   screenshot). If the structure alone no longer shows what matters, the
+   boldness lives in the words, not the design. Fix the structure.
+6. **Check the floor.** Contrast, focus, targets, reading comfort still pass.
    Bold is not an excuse for unreadable.
 
 ## How far, by mode

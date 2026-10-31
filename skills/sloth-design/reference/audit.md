@@ -54,6 +54,10 @@ can; don't guess a contrast ratio.
 |---|---|---|---|---|---|
 | 1 | P0 | A11y | <issue> | `path:line` | <smallest fix> |
 
+**Patterns:** <issues that repeat across files: one root cause, one fix>
+
+**Works well:** <what passed and should stay>
+
 **How I checked:** <tools, widths, what was measured vs. read from code>
 
 Fix P0–P1 now? (`/sloth-design harden` or `polish`)

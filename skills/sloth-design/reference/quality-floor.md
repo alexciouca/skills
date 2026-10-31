@@ -27,6 +27,17 @@ choice that fits this product.
 - Filler copy: "Unlock the power of", "Seamless", "Elevate your workflow",
   lorem ipsum, fake logos and testimonials.
 - Generic illustrations of people with laptops.
+- The stats strip: a huge number, a tiny label, three more numbers beside it,
+  used as decoration rather than because the numbers matter.
+- A thick colored stripe on the left edge of cards, alerts or list items.
+- Section numbers (01, 02, 03) when the order means nothing.
+- A modal for something that needs neither interruption nor focus.
+- Monospace as a costume for "technical", not for code or data.
+- Unicode symbols standing in for an icon set; icons from mixed sets with
+  different strokes.
+- The same fade-up entrance on every section.
+- Dark or light picked because of the category ("dev tools are dark")
+  instead of where and when people use it.
 
 ## Floors
 
@@ -57,6 +68,16 @@ choice that fits this product.
 - **Images:** width and height (or aspect ratio) set, meaningful `alt` or
   `alt=""` for decoration, sized for how they are shown.
 - **One primary action** per view; secondary actions look secondary.
+- **Headings** sit closer to what they introduce: more space above than below.
+- **Depth:** shadows have an offset and a soft blur and come from one light
+  direction; a glow with no offset is decoration, not depth. Hard block
+  shadows only when the whole design is built on them.
+- **Browser surfaces** carry the design too: text selection color, caret,
+  focus ring, scrollbars where they show, link underline offset and
+  thickness, form controls (`accent-color`). Theme them from the palette;
+  browser defaults give away an assembled page.
+- **Coverage:** everything the brief asked for is on the screen and findable
+  in a few seconds.
 
 ## Before you call it done
 

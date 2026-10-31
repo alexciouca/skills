@@ -32,9 +32,14 @@ or the project has none chosen.
    1.05–1.25 for large headings; line length 45–75 characters; paragraph
    spacing instead of indents on screen.
 6. **Details.** Uppercase and small labels get 0.04–0.1em letter spacing;
-   large display type often wants slightly negative spacing; tabular numerals
-   in tables and prices; `text-wrap: balance` on headings.
-7. **Loading.** Only the weights in use; `font-display: swap` or `optional`;
+   large display type often wants slightly negative spacing, but not past
+   about -0.04em; tabular numerals in tables and prices.
+7. **Line breaks.** `text-wrap: balance` on headings and short centered
+   text, `pretty` on paragraphs. Break a heading by hand only between
+   phrases, and check it at every width; a hard break that lands mid-line on
+   a phone is worse than none. A narrow column that still breaks badly →
+   edit the copy or widen the column.
+8. **Loading.** Only the weights in use; `font-display: swap` or `optional`;
    a fallback stack with similar metrics (`size-adjust` if the shift is
    visible). Prefer fonts the project already hosts; never add a remote font
    service unasked.
