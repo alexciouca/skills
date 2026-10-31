@@ -6,11 +6,15 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import io.github.alexciouca.skills.Repo.Skill;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,7 +34,30 @@ class SkillFilesTest {
     @Test
     void repoHasTheExpectedSkills() {
         List<String> names = Repo.skillDirs().stream().map(dir -> dir.getFileName().toString()).toList();
-        assertEquals(List.of("sloth", "sloth-ask", "sloth-mini", "sloth-plan", "sloth-review"), names);
+        assertEquals(List.of("sloth", "sloth-ask", "sloth-design", "sloth-mini", "sloth-plan", "sloth-review"),
+                names);
+    }
+
+    @ParameterizedTest
+    @MethodSource("skills")
+    void referenceFilesAndLinksMatch(Path dir) throws IOException {
+        // Every reference/*.md link in SKILL.md points to a file, and every file is linked,
+        // so no playbook is missing or orphaned.
+        String body = Skill.load(dir).body();
+        Set<String> linked = new TreeSet<>();
+        Matcher link = Pattern.compile("\\]\\((reference/[^)#\\s]+\\.md)\\)").matcher(body);
+        while (link.find()) {
+            linked.add(link.group(1));
+        }
+        Set<String> present = new TreeSet<>();
+        Path reference = dir.resolve("reference");
+        if (Files.isDirectory(reference)) {
+            try (Stream<Path> files = Files.list(reference)) {
+                files.filter(f -> f.toString().endsWith(".md"))
+                        .forEach(f -> present.add("reference/" + f.getFileName()));
+            }
+        }
+        assertEquals(present, linked, "reference files and SKILL.md links differ");
     }
 
     @ParameterizedTest
